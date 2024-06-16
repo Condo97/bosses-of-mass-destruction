@@ -72,6 +72,17 @@ dependencies {
     }
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
+
 processResources {
     inputs.property "version", project.version
 
@@ -110,7 +121,7 @@ jar {
 }
 
 publishing.repositories {
-    // mavenLocal()
+     mavenLocal()
 }
 
 compileKotlin.kotlinOptions.jvmTarget = "17"
