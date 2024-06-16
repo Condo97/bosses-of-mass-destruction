@@ -11,6 +11,8 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version + "-" + project.minecraft_version
 group = project.maven_group
 
+apply plugin: 'maven-publish'
+
 test {
     useJUnitPlatform()
 }
@@ -82,6 +84,7 @@ publishing {
         mavenLocal()
     }
 }
+
 
 processResources {
     inputs.property "version", project.version
