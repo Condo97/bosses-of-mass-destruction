@@ -2,10 +2,8 @@ jdk:
   - openjdk17
 
 install:
-  - ./gradlew assemble
+  - chmod +x gradlew
+  - ./gradlew build
 
 script:
   - ./gradlew clean build publishToMavenLocal
-
-publish:
-  - mvn install:install-file -Dfile=build/libs/your-artifact.jar -DgroupId=com.github.your-username -DartifactId=your-artifact -Dversion=${version} -Dpackaging=jar
